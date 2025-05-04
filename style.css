@@ -8,7 +8,7 @@
   border: none;
   outline: none;
   scroll-behavior: smooth;
-  font-family: "Nunito", sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 :root {
@@ -48,13 +48,12 @@ section {
 .logo {
   font-size: 4rem;
   color: var(--text-color);
-  font-weight: 700;
+  font-weight: 550;
   cursor: default;
 }
 
 .logo:hover {
-  color: rgb(225, 205, 205);
-  text-decoration: underline;
+  color: rgba(242, 103, 103, 0.861);
   text-shadow: 2px 2px 4px #000000;
   transition: 0.5s ease;
 }
@@ -67,14 +66,57 @@ section {
 }
 
 .navbar a:hover {
-  color: rgb(225, 205, 205);
+  color: rgba(242, 103, 103, 0.861);
   transition: 0.5s ease;
+  text-decoration: underline;
+}
+
+/* Hide navbar by default on mobile */
+.navbar {
+  display: flex;
+  gap: 2rem;
 }
 
 #menu-icon {
-  font-size: 3.6rem;
-  color: var(--text-color);
   display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+    z-index: 101;
+    font-size: 2.5rem;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-color);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    display: none; /* Hidden by default */
+  }
+
+  .navbar.active {
+    display: flex; /* Show when toggled */
+  }
+
+  .navbar a {
+    margin: 1.5rem 0;
+    font-size: 2rem;
+  }
+
+  .logo {
+    font-size: 3rem;
+  }
+
+  .home-img img {
+    display: none;
+  }
 }
 
 .home {
@@ -84,21 +126,15 @@ section {
 }
 
 .home-content h3 {
-  font-size: 3.2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
 }
 
 .home-content h3:nth-of-type(2) {
   margin-bottom: 2rem;
 }
 
-span {
-  color: var(--text-color);
-}
-
 .home-content h1 {
-  font-size: 5.6rem;
-  font-weight: 700;
+  font-size: 3rem;
   line-height: 1.3;
 }
 
@@ -120,7 +156,7 @@ span {
 }
 
 .home-content p {
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .social-media {
@@ -143,7 +179,7 @@ span {
   display: flex;
   justify-content: left;
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 2.5rem;
   font-weight: 600;
   transition: 0.5s ease;
 }
@@ -226,7 +262,7 @@ h2.section-title {
 }
 
 .skill-box i {
-  font-size: 15rem;
+  font-size: 12rem;
   color: var(--text-color);
   /* margin-bottom: 1rem; */
 }
